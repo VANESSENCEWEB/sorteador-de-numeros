@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Space+Grotesk:wght@300;400;700&display=swap');
+
+:root {
+    --primary: #00ff88;
+    --secondary: #ff0080;
+    --bg-dark: #050505;
+    --panel-bg: rgba(20, 20, 20, 0.7);
+    --btn-clean-hover: #cd1436;
+    --border-color: rgba(0, 255, 136, 0.2);
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-dark);
+    color: #fff;
+    font-family: var(--font-main);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 128, 0.05) 0%, transparent 40%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header Estilo Dashboard */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-family: var(--font-code);
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight { color: var(--primary); }
+
+.status-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+}
+
+/* Painéis Glassmorphism */
+.glass-panel {
+    background: var(--panel-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary);
+    padding-left: 10px;
+}
+
+.panel-header h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Inputs e Formatação */
+.input-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.field-box label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: var(--primary);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: var(--font-code);
+    font-size: 1.1rem;
+}
+
+/* Botões Estilo Comand Center */
+#btn-main {
+    width: 100%;
+    margin-top: 2rem;
+    background: var(--primary);
+    color: #000;
+    border: none;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#btn-main:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* Resultado */
+.display-area {
+    min-height: 200px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+}
+
+.number-card {
+    background: #000;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-family: var(--font-code);
+    font-weight: bold;
+    font-size: 1.3rem;
+    animation: slideUp 0.3s ease-out;
+}
+
+.btn-clear {
+    background: #ffffff;
+    color: var(--btn-clean-hover);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    border: 2px solid #transparent;
+    font-weight: bold;
+}
+
+.btn-clear:hover {
+    background: var(--btn-clean-hover);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+}
