@@ -11,7 +11,7 @@ O **Sorteador PRO** é uma ferramenta de alta performance para geração de núm
 ## 📸 Preview do Projeto
 
 <div align="center">
-  <img src="./preview.png" alt="Sorteador PRO Preview" width="100%" style="border-radius: 12px; border: 1px solid #00ff88;">
+  <img src="./screenshot.png" alt="Sorteador PRO Preview" width="100%" style="border-radius: 12px; border: 1px solid #00ff88;">
   <p><em>Interface moderna com estética Neon Green & Space Grotesk.</em></p>
 </div>
 
