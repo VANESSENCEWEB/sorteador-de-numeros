@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Números - </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-dice-d20"></i>
+                <span><h1>SORTEADOR de Números</h1></span>
+            </div>
+            <div class="status-badge">Rocketseat</div>
+        </header>
+        <h2>Escolha um número para sortear:</h2><br>
+
+        <main class="content-grid">
+            <section class="glass-panel config-section">
+                <div class="panel-header">
+                    <i class="fas fa-angles-right"></i>
+                    <h2>Start</h2>
+                </div>
+
+                <div class="input-grid">
+                    <div class="field-box">
+                        <label>Qtd. Números</label>
+                        <input type="number" id="quantidade" value="1" min="1">
+                    </div>
+                    <div class="field-box">
+                        <label>Mínimo</label>
+                        <input type="number" id="min" value="1">
+                    </div>
+                    <div class="field-box">
+                        <label>Máximo</label>
+                        <input type="number" id="max" value="100">
+                    </div>
+                </div>
+
+                <div class="option-row">
+                    <div class="toggle-control">
+                        <label class="switch">
+                          <br>
+                            <input type="checkbox" id="nao-repetir" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Evitar Repetições</span>
+                    </div>
+                </div>
+
+                <button id="btn-main" onclick="gerarSorteio()">
+                    <i class="fas fa-play"></i> EXECUTAR SORTEIO
+                </button>
+            </section>
+
+            <section class="glass-panel result-section">
+                <div class="panel-header">
+                   <i class="fas fa-angles-right"></i>
+                    <h2>Numero(s) Sorteado(s) :</h2>
+                    <button class="btn-clear" onclick="limparPainel()">Limpar</button>
+                </div>
+                
+                <div id="display-area" class="display-area">
+                    <div class="empty-state">Aguardando resultado...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
